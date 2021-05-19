@@ -1,0 +1,42 @@
+{
+  "textSimple": "Простой текст",
+  "@textSimple": {
+    "description": "Simple text without placeholders"
+  },
+  "textWithParams": "Текст с параметрами: {amount} {comment}",
+  "@textWithParams": {
+    "description": "Text with different placeholders",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "format": "decimalPattern",
+        "optionalParameters": {
+          "decimalDigits": 2
+        }
+      },
+      "comment": {
+        "type": "String"
+      }
+    }
+  },
+  "textWithDate": "Текст с датой: {date}",
+  "@textWithDate": {
+    "description": "Text with date parameter",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "yMd"
+      }
+    }
+  },
+  "textPlural": "{howMany,plural, =0{Нет нажатий}=1{{howMany} нажатие}=2{{howMany} нажатия}few{{howMany} нажатия}many{{howMany} нажатий}other{{howMany} нажатий}}",
+  "@textPlural": {
+    "description": "Text with plural",
+    "placeholders": {
+      "howMany": {},
+      "currency": {
+        "type": "String"
+      }
+    }
+  }
+}

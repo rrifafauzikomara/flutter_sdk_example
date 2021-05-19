@@ -1,0 +1,40 @@
+{
+  "@@locale": "en",
+  "textSimple": "Simple Text",
+  "@textSimple": {
+    "description": "Simple text without placeholders"
+  },
+  "textWithParams": "Text with parameters: {amount} {comment}",
+  "@textWithParams": {
+    "description": "Text with different placeholders",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "format": "compactCurrency",
+        "optionalParameters": {
+          "decimalDigits": 2
+        }
+      },
+      "comment": {
+        "type": "String"
+      }
+    }
+  },
+  "textWithDate": "Text with date: {date}",
+  "@textWithDate": {
+    "description": "Text with date parameter",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "yMd"
+      }
+    }
+  },
+  "textPlural": "{howMany,plural, =0{No clicks}=1{{howMany} click}=2{{howMany} clicks}few{{howMany} clicks}many{{howMany} clicks}other{{howMany} clicks}}",
+  "@textPlural": {
+    "description": "Text with plural",
+    "placeholders": {
+      "howMany": {}
+    }
+  }
+}
