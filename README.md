@@ -17,4 +17,14 @@ void main() {
   runApp(MyApp());
 }
 ```
-* Run the project on your device
+* Run the project on your device e.g. in chrome
+
+```bash
+flutter run -d chrome
+```
+
+
+To see the list of devices run:
+```bash
+flutter devices
+```
