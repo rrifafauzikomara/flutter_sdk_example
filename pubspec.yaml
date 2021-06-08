@@ -13,8 +13,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  phrase:
-    path: ../phrase     #TODO: local path, change after publishing
+  phrase: ^1.0.0
 
 dev_dependencies:
   build_runner: ^2.0.3
