@@ -9,10 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.4
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  analyzer: ^1.7.2
   phrase: ^1.0.0
 
 dev_dependencies:
