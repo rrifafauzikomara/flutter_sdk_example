@@ -52,10 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(AppLocalizations.of(context)!.textSimple),
-            Text(AppLocalizations.of(context)!.textWithParams(123456, "(!)")),
-            Text(AppLocalizations.of(context)!.textWithDate(DateTime.utc(1996, 7, 10))),
-            Text(AppLocalizations.of(context)!.textPlural(_counter),),
+            Text(AppLocalizations.of(context).textSimple),
+            Text(AppLocalizations.of(context).textWithParams(123456, "(!)")),
+            Text(AppLocalizations.of(context).textWithDate(DateTime.utc(1996, 7, 10))),
+            Text(AppLocalizations.of(context).textPlural(_counter),),
           ],
         ),
       ),
