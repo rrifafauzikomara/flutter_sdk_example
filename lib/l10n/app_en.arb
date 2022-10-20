@@ -36,5 +36,9 @@
     "placeholders": {
       "howMany": {}
     }
+  },
+  "screenTitle": "Phrase for Flutter Demo Project",
+  "@screenTitle": {
+    "description": "Main screen title"
   }
 }
