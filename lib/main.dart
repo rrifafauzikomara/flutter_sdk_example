@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/phrase_localizations.dart';
 import 'package:phrase/phrase.dart';
-
-import 'l10n/l10n.dart';
 
 void main() {
   Phrase.setup("", "");
 
-  runApp(const PhraseExampleApp());
+  runApp(const MyApp());
 }
 
-class PhraseExampleApp extends StatefulWidget {
-  const PhraseExampleApp({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
-  State<PhraseExampleApp> createState() => _PhraseExampleAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class _PhraseExampleAppState extends State<PhraseExampleApp> {
+class _MyAppState extends State<MyApp> {
   Locale? _forceLocale;
 
   @override
