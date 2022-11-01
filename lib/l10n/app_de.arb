@@ -40,5 +40,6 @@
         "type": "String"
       }
     }
-  }
+  },
+  "screenTitle": "Phrase für das Flutter-Demoprojekt"
 }
