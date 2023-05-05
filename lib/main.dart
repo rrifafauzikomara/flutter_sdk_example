@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sdk_example/di/dependency.dart';
+import 'package:flutter_sdk_example/di/injections.dart';
 import 'package:flutter_sdk_example/localization/example_localization.dart';
 import 'package:phrase/phrase.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Phrase.setup("", "");
-
+  Injections().init();
   runApp(const MyApp());
 }
 
@@ -14,6 +17,8 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 }
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class _MyAppState extends State<MyApp> {
   Locale? _forceLocale;
@@ -29,6 +34,7 @@ class _MyAppState extends State<MyApp> {
         onChangeLocale: (locale) => setState(() => _forceLocale = locale),
       ),
       locale: _forceLocale,
+      navigatorKey: navigatorKey,
     );
   }
 }
@@ -46,6 +52,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final ExampleLocalization localization = sl<ExampleLocalization>();
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -56,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final localization = ExampleLocalization(context: context);
     return Scaffold(
       appBar: AppBar(
         title: Text(localization.tr.screenTitle),
