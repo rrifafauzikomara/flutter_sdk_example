@@ -5,8 +5,9 @@ import 'package:flutter_sdk_example/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  late ExampleLocalization localizations;
+
   testWidgets('using AppLocalizations', (tester) async {
-    late ExampleLocalization localizations;
     await tester.pumpWidget(MaterialApp(
       localizationsDelegates: PhraseLocalizations.localizationsDelegates,
       supportedLocales: PhraseLocalizations.supportedLocales,
