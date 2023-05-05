@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_gen/gen_l10n/phrase_localizations.dart';
+import 'package:flutter_sdk_example/localization/example_localization.dart';
 import 'package:phrase/phrase.dart';
 
 void main() {
@@ -21,10 +20,11 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    final localization = ExampleLocalization(context: context);
     return MaterialApp(
       title: 'Phrase SDK Example',
-      localizationsDelegates: PhraseLocalizations.localizationsDelegates,
-      supportedLocales: PhraseLocalizations.supportedLocales,
+      localizationsDelegates: localization.localizationsDelegates,
+      supportedLocales: localization.supportedLocales,
       home: MyHomePage(
         onChangeLocale: (locale) => setState(() => _forceLocale = locale),
       ),
@@ -56,21 +56,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final localization = ExampleLocalization(context: context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).screenTitle),
+        title: Text(localization.tr.screenTitle),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(AppLocalizations.of(context).textSimple),
-            Text(AppLocalizations.of(context).textWithParams(123456, "(!)")),
-            Text(AppLocalizations.of(context)
-                .textWithDate(DateTime.utc(1996, 7, 10))),
+            Text(localization.tr.textSimple),
+            Text(localization.tr.textWithParams(123456, "(!)")),
+            Text(localization.tr.textWithDate(DateTime.utc(1996, 7, 10))),
             Text(
-              AppLocalizations.of(context).textPlural(_counter),
-              style: Theme.of(context).textTheme.headline4,
+              localization.tr.textPlural(_counter),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 30),
             Row(
